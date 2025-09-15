@@ -10,7 +10,7 @@ const app = express();
 const PORT = config.PORT;
 
 // Middleware
-// Allow localhost on any port during development (and 127.0.0.1)
+// Allow localhost, 127.0.0.1, and Netlify frontend
 const corsOptions = {
   origin: (origin, callback) => {
     // Allow non-browser requests (no origin) like curl/Postman
@@ -18,8 +18,9 @@ const corsOptions = {
 
     const isLocalhost = /^https?:\/\/localhost(:\d+)?$/.test(origin);
     const isLoopback = /^https?:\/\/127\.0\.0\.1(:\d+)?$/.test(origin);
+    const isNetlify = origin === 'https://au-ncc.netlify.app';
 
-    if (isLocalhost || isLoopback) {
+    if (isLocalhost || isLoopback || isNetlify) {
       return callback(null, true);
     }
 

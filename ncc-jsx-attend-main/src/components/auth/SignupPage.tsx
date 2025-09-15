@@ -262,7 +262,7 @@ const SignupPage = ({ onSignup, onSwitchToLogin }: SignupPageProps) => {
       <footer className="border-t bg-muted/30 px-6 py-4">
         <div className="text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 NCC Attendance Portal - Service Before Self
+            © 2025 NCC Attendance Portal - Service Before Self
           </p>
         </div>
       </footer>
