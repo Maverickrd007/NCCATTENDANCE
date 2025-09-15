@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NCC Attendance Portal Design System */
+
+@layer base {
+  :root {
+    /* Professional NCC Color Palette */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Navy Blue Primary Theme */
+    --primary: 215 85% 25%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 215 85% 20%;
+    --primary-light: 215 85% 35%;
+
+    /* Military Green Secondary */
+    --secondary: 145 40% 25%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 145 40% 20%;
+
+    --muted: 210 20% 92%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 215 25% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 145 60% 40%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 45 100% 51%;
+    --warning-foreground: 215 25% 15%;
+
+    --border: 214.3 31.8% 88%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 215 85% 25%;
+
+    --radius: 0.75rem;
+
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 85% 25%), hsl(215 85% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(145 40% 25%), hsl(145 40% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 85% 25%) 0%, hsl(145 40% 25%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+
+    /* Professional Shadows */
+    --shadow-sm: 0 2px 4px hsl(215 25% 15% / 0.05);
+    --shadow-md: 0 4px 12px hsl(215 25% 15% / 0.1);
+    --shadow-lg: 0 8px 25px hsl(215 25% 15% / 0.15);
+    --shadow-card: 0 4px 16px hsl(215 85% 25% / 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme for NCC Portal */
+    --background: 215 25% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 25% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 215 85% 35%;
+    --primary-foreground: 210 40% 98%;
+    --primary-hover: 215 85% 30%;
+    --primary-light: 215 85% 40%;
+
+    --secondary: 145 40% 30%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-hover: 145 40% 25%;
+
+    --muted: 215 25% 15%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 25 95% 53%;
+    --accent-foreground: 215 25% 8%;
+
+    --success: 145 60% 45%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 45 100% 55%;
+    --warning-foreground: 215 25% 8%;
+
+    --border: 215 25% 20%;
+    --input: 215 25% 18%;
+    --ring: 215 85% 35%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(215 85% 35%), hsl(215 85% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(145 40% 30%), hsl(145 40% 40%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 85% 35%) 0%, hsl(145 40% 30%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(215 25% 10%) 0%, hsl(215 25% 12%) 100%);
+
+    --shadow-sm: 0 2px 4px hsl(0 0% 0% / 0.2);
+    --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.3);
+    --shadow-lg: 0 8px 25px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 4px 16px hsl(215 85% 25% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-foreground;
+  }
+}
+
+@layer components {
+  /* Custom NCC Components */
+  .ncc-gradient-bg {
+    background: var(--gradient-hero);
+  }
+
+  .ncc-card {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .ncc-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .ncc-stat-card {
+    @apply rounded-xl p-6 ncc-card;
+  }
+
+  .ncc-table-row:hover {
+    @apply bg-muted/50;
+    transition: var(--transition-fast);
+  }
+
+  .ncc-badge-present {
+    @apply bg-success/10 text-success border-success/20 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .ncc-badge-absent {
+    @apply bg-destructive/10 text-destructive border-destructive/20 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .ncc-badge-leave {
+    @apply bg-warning/10 text-warning border-warning/20 px-2 py-1 rounded-full text-xs font-medium;
+  }
+
+  .ncc-header-gradient {
+    background: var(--gradient-primary);
+    color: hsl(var(--primary-foreground));
+  }
+}
